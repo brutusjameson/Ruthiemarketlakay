@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruthie Market Lakay</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#202a40}
+header{background:#073b8c;color:white;text-align:center;padding:22px 10px}
+header h1{margin:0;font-size:25px}
+nav{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:14px;background:white}
+nav a{text-decoration:none;color:#073b8c;font-weight:bold}
+.hero{background:linear-gradient(130deg,#e52335,#ffca28);color:white;text-align:center;padding:32px 15px}
+.hero h2{font-size:27px}
+.search{display:flex;gap:7px;max-width:440px;margin:auto}
+input{flex:1;min-width:0;padding:12px;border:0;border-radius:7px;font-size:15px}
+button{padding:12px;background:#07864b;color:white;border:0;border-radius:7px;font-weight:bold}
+main{max-width:950px;margin:auto;padding:18px 12px}
+h2{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:white;padding:18px 8px;text-align:center;border-radius:12px;box-shadow:0 2px 8px #0001}
+.emoji{display:block;font-size:34px;margin-bottom:8px}
+.info{background:#e4f5ec;padding:18px;margin-top:22px;border-radius:12px;line-height:1.7;overflow-wrap:anywhere}
+footer{background:#10213d;color:white;text-align:center;padding:20px 10px;margin-top:25px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header>
+<h1>🛍️ Ruthie Market Lakay</h1>
+<p>Makèt ou, toupre ou! 🇭🇹</p>
+</header>
+<nav>
+<a href="#lakay">Akèy</a>
+<a href="#kategori">Kategori</a>
+<a href="#pwodwi">Pwodwi</a>
+<a href="#vende">Vandè</a>
+<a href="#kontak">Kontak</a>
+</nav>
+<section class="hero" id="lakay">
+<h2>Achte fasil, vann fasil!</h2>
+<p>Yon makèt sou entènèt pou Ayiti.</p>
+<div class="search">
+<input id="recherche" placeholder="Chèche yon pwodwi...">
+<button onclick="rechercher()">Chèche</button>
+</div>
+</section>
+<main>
+<section id="kategori">
+<h2>🧺 Kategori yo</h2>
+<div class="grid">
+<div class="card"><span class="emoji">👕</span>Rad ak soulye</div>
+<div class="card"><span class="emoji">📱</span>Telefòn</div>
+<div class="card"><span class="emoji">🏠</span>Kay ak mèb</div>
+<div class="card"><span class="emoji">🍎</span>Manje</div>
+<div class="card"><span class="emoji">💄</span>Bote</div>
+<div class="card"><span class="emoji">🔧</span>Zouti</div>
+</div>
+</section>
+<section id="pwodwi">
+<h2>⭐ Pwodwi yo</h2>
+<div class="grid" id="lis">
+<div class="card product"><span class="emoji">👟</span>Rad ak soulye</div>
+<div class="card product"><span class="emoji">📱</span>Telefòn ak akseswa</div>
+<div class="card product"><span class="emoji">🪑</span>Kay ak mèb</div>
+</div>
+<p style="font-size:13px">Pwodwi ki parèt yo se egzanp. Ajoute pwodwi reyèl pita.</p>
+</section>
+<section class="info" id="vende">
+<h2>🤝 Pou vandè</h2>
+<p>Vann machandiz ou sou Ruthie Market Lakay epi konekte ak plis kliyan. Enskripsyon vandè ak piblikasyon pwodwi yo poko aktive.</p>
+</section>
+<section class="info" id="kontak">
+<h2>📞 Kontakte nou</h2>
+<p>Port-au-Prince, Ayiti</p>
+<p>Imèl: brutusjameson561@gmail.com</p>
+<p>Telefòn: +50948588516 / +50940014641</p>
+<p>MonCash ak NatCash bezwen konfigirasyon ak verifikasyon anvan peman reyèl.</p>
+</section>
+</main>
+<footer>
+<p>© 2026 Ruthie Market Lakay</p>
+<p>Achte fasil, vann fasil, grandi ansanm! 🇭🇹</p>
+</footer>
+<script>
+function rechercher(){
+const mot=document.getElementById('recherche').value.toLowerCase().trim();
+const cartes=document.querySelectorAll('.product');
+let jwenn=false;
+cartes.forEach(c=>{
+const ok=!mot||c.innerText.toLowerCase().includes(mot);
+c.style.display=ok?'':'none';
+if(ok)jwenn=true;
+});
+if(!jwenn)alert('Nou poko jwenn pwodwi sa a.');
+document.getElementById('pwodwi').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
